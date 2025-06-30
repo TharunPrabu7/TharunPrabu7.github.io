@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <style>
+        body {
+            background-color: #1C1B22;
+            color: #ddd;
+            font-family: monospace;
+            margin: 0;
+            padding: 2rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 1rem 0;
+        }
+
+        .header {
+            margin-bottom: 1rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav a {
+            margin-right: 1rem;
+            color: #4caf50;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #8ab4f8;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .nav a::after {
+            content: ' 🔗';
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .nav a:hover {
+            color: #66bb6a;
+            border-bottom-color: #fff;
+        }
+
+        .nav a:hover::after {
+            opacity: 1;
+        }
+
+        .projects,
+        .about {
+            margin-top: 2rem;
+        }
+
+        .project {
+            padding-top: 1rem;
+        }
+
+        .project-title {
+            color: #8ab4f8;
+            margin-right: 0.5rem;
+        }
+
+        .project-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .about {
+            max-width: 600px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container .projects {
+            width: 65%;
+        }
+
+        .container .about {
+            width: 35%;
+        }
+
+        a {
+            color: rgb(158, 158, 255);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container .projects,
+            .container .about {
+                width: 100%;
+            }
+
+            .about {
+                margin-top: 2rem;
+                max-width: 100%;
+            }
+            .desktop-only {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+                padding-top: 8rem;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #1C1B22;
+                z-index: 100;
+                padding: 1rem;
+                border-bottom: 1px solid #444;
+                margin-bottom: 0;
+            }
+
+            .container {
+                flex-direction: column;
+                margin-top: 1.5rem;
+            }
+
+            .container .projects {
+                width: 100%;
+            }
+
+            .container .about {
+                display: none;
+            }
+
+            .about-mobile {
+                display: block;
+                background: #23222a;
+                color: #ddd;
+                padding: 1.5rem 1rem 1rem 1rem;
+                margin-top: 2rem;
+                border-radius: 8px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .about-mobile {
+                display: none;
+            }
+        }
+
+        /* Hamburger menu modal */
+        .about-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-modal-content {
+            background: #23222a;
+            color: #ddd;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90vw;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .about-modal-close {
+            background: none;
+            border: none;
+            color: #8ab4f8;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            cursor: pointer;
+        }
+        h1 {
+            line-height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav">
+            <div class="nav-links">
+                <a href="/">/home</a>
+                <a href="/portfolio">/portfolio</a>
+            </div>
+        </div>
+        <h1>{{ site.title | default: "My portfolio" }}</h1>
+        <hr class="desktop-only">
+    </div>
+    <div class="container">
+        <div class="projects">
+            {% for post in site.posts %}
+            <div class="project">
+                <span class="project-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+                <span class="project-date">{{ post.date }}</span>
+                <div>{{ post.description }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="about">
+            <p>Backend enthusiast disguised as a full-stack dev. I speak fluent Java (Spring Boot), whisper to databases in SQL, and occasionally wrestle with frontend in Angular and Tailwind. Python is my utility belt for all things automation and logic.
+            Looking to build cool, scalable stuff — mostly from the server side. Check out my work (and bad commit messages) <a href="github.com/TharunPrabu7">here.</p>
+        </div>
+    </div>
+    <div class="about-mobile" id="about-mobile">
+        <p>Backend enthusiast disguised as a full-stack dev. I speak fluent Java (Spring Boot), whisper to databases in SQL, and occasionally wrestle with frontend in Angular and Tailwind. Python is my utility belt for all things automation and logic.
+            Looking to build cool, scalable stuff — mostly from the server side. Check out my work (and bad commit messages) <a href="github.com/TharunPrabu7">here.</p>
+    </div>
+    <div class="about-modal" id="about-modal">
+        <div class="about-modal-content">
+            <button class="about-modal-close" id="about-modal-close" aria-label="Close about section">&times;</button>
+            <p>Backend enthusiast disguised as a full-stack dev. I speak fluent Java (Spring Boot), whisper to databases in SQL, and occasionally wrestle with frontend in Angular and Tailwind. Python is my utility belt for all things automation and logic.
+            Looking to build cool, scalable stuff — mostly from the server side. Check out my work (and bad commit messages) <a href="github.com/TharunPrabu7">here.</p>
+        </div>
+    </div>
+    <script>
+        const aboutModal = document.getElementById('about-modal');
+        const aboutModalClose = document.getElementById('about-modal-close');
+
+        function showAboutModal() {
+            aboutModal.style.display = 'flex';
+        }
+
+        function hideAboutModal() {
+            aboutModal.style.display = 'none';
+        }
+
+        aboutModalClose && aboutModalClose.addEventListener('click', hideAboutModal);
+        aboutModal && aboutModal.addEventListener('click', function(e) {
+            if (e.target === aboutModal) hideAboutModal();
+        });
+    </script>
+
+</body>
+
+</html>
