@@ -6,15 +6,11 @@ description: A showcase of my projects, skills, and experience as a Computer Sci
 skills:
   - name: Programming Languages
     items:
-      - C++
       - Java
-      - GLSL
-      - C#
       - Python
       - JavaScript
   - name: Web Development
     items:
-      - Salesforce Stack - Apex, LWC, SOQL
       - Spring boot
       - HTML/CSS
       - REST APIs
@@ -22,69 +18,47 @@ skills:
       - PostgreSQL
   - name: Game Development
     items:
-      - 3D Graphics
-      - OpenGL
-      - RenderDoc
-      - Unity
-      - Unreal Engine
-      - Blender
+      - Custom Game Engine Logic
+      - Game Loop Design
+      - GUI Development
+      - Custom Combat System
   - name: AI/ML & Cloud Tools
     items:
-      - CUDA
-      - OpenCV
       - Git/GitHub
       - Docker
-      - Linux
-      - AWS
 experience:
-  - company: Northeastern University
-    role: Research Assistant
-    start_date: "Jan 2025"
-    end_date: "Current"
-    description: "Researching procedural content generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and perception systems to create novel game environments."
+  - company: Asymmetrique
+    role: Full Stack Developer
+    start_date: "May 2022"
+    end_date: "Sep 2023"
+    description: "Worked on building scalable marketing automation tools. Developed RESTful APIs in Spring Boot, built responsive UIs with Angular and Tailwind, and integrated third-party analytics tools for campaign tracking and lead scoring. Also performed campaign data analysis using Python and SQL to generate insights, improve conversion funnels, and support marketing decisions."
     technologies:
-      - Procedural Generation
-      - AI Behavior Trees
-      - Pathfinding Algorithms
-      - Binary Space Partitioning
-      - WaveFunction Collapse
-      - Game AI
-  - company: Northeastern University
-    role: Teaching Assistant
-    start_date: "Jan 2025"
-    end_date: "Current"
-    description: "Teaching Assistant for Game Programming and Programming in C++ courses. Responsibilities include evaluating student assignments and conducting office hours to provide academic support."
-    technologies:
-        - Unity
-        - C#
-        - C++
-        - Linux
-  - company: Deloitte
-    role: Senior Software Developer
-    start_date: "July 2021"
-    end_date: "Aug 2024"
-    description: "Salesforce developer specializing in end-to-end platform development. Built a high-volume notification engine processing 1000+ emails hourly, developed responsive LWC interfaces, created RESTful APIs, and integrated CTI systems."
-    technologies:
-      - Salesforce
-      - Apex
-      - LWC
+      - Java Spring Boot
+      - Angular
+      - Tailwind CSS
       - REST APIs
-      - Sales Cloud
-      - Service Cloud
-      - Genesys CTI
-      - Platform Events
-  - company: Dariyal Games
-    role: Game Developer Intern
-    start_date: "Dec 2019"
-    end_date: "Jan 2020"
-    description: "Game developer focused on performance optimization. Improved isometric game rendering performance through GPU instancing and occlusion culling, designed city management mechanics with FSM-driven NPCs, and built cross-platform leaderboards with MongoDB."
+      - MySQL
+      - HTML/CSS
+      - Google Analytics
+      - Python
+      - Pandas
+      - SQL
+      - Data Visualization
+
+  - company: Shiroi Energy
+    role: Full Stack Developer
+    start_date: "Feb 2021"
+    end_date: "Apr 2022"
+    description: "Developed web-based internal dashboards for solar plant performance monitoring. Built backend services in Spring Boot and designed user interfaces with HTML, CSS, and Material UI. Implemented real-time data display using charting libraries."
     technologies:
-      - Unity
-      - GPU Optimization
-      - AI Systems
-      - Pathfinding
-      - MongoDB
-      - Performance Profiling
+      - Java Spring Boot
+      - HTML
+      - CSS
+      - Material UI
+      - PostgreSQL
+      - Chart.js
+      - Data Visualization
+
 ---
 
 ## About Me
